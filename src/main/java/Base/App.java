@@ -1,4 +1,7 @@
 package Base;
+
+import java.util.Scanner;
+
 /*
 UCF COP3330 Summer 2021 Assignment 1 Solution
 Copyright 2021 Alek Dussuau
@@ -27,7 +30,27 @@ Add more inputs to the program to expand the story.
 Implement a branching story, where the answers to questions determine how the story is constructed.
  */
 public class App {
+    static Scanner input = new Scanner(System.in);
     public static void main(String[] args) {
+        //inputs
+        String noun = Read1("noun");
+        String verb = Read1("verb");
+        String adjective = Read2("adjective");
+        String adverb = Read2("adverb");
 
+        //output
+        System.out.printf("Do you %s your %s %s %s? That's Hilarious!", verb, adjective, noun, adverb);
+    }
+
+    private static String Read1(String x){
+        System.out.print("Enter a " + x + ": ");
+        String temp = input.nextLine();
+        return temp;
+    }
+
+    private static String Read2(String x){
+        System.out.print("Enter an " + x + ": ");
+        String temp = input.nextLine();
+        return temp;
     }
 }
